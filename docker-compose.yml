@@ -1,15 +1,3 @@
-# loonflow
-## 介绍
-对原有项目做了配置优化，使用新镜像和新的docker、docker-compose启动方式运行项目。
-
-[原项目介绍点击查看](https://github.com/blackholll/loonflow/blob/master/README.md)
-
-## 快速开始
-安装docker、docker-compose
-
-#### 配置信息
-docker-compose如下，可按需求更换配置
-```yaml
 version: '3'
 services:
   loonflow-redis:
@@ -61,16 +49,3 @@ services:
 #      - |
 #        cd /opt/loonflow
 #        celery -A tasks worker -l info -c 8 -Q loonflow
-```
-#### 启动项目
-```bash
-docker-compose up -d
-```
-
-#### 初始化数据，参数对应数据库用户密码
-```bash
-docker exec -i myslq-db mysql -uloonflow -p123456 -h127.0.0.1 -P 3306 -D loonflow  < loonflow2.0.0_init.sql
-```
-
-#### 打开项目
-localhost:8001
